@@ -4,8 +4,7 @@ var path = require('path')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendFile(path.resolve('../hackUCI2/public/expire.txt'))
-  //res.render('home');
+  res.sendFile('expire.txt', { root: path.join(__dirname, '../public') })
 });
 
 module.exports = router;
