@@ -12,7 +12,9 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   res.send('Yeah I got the request');
-  var url =   req.body.url;
+  console.log("GOT EM");
+  console.log(req.body);
+
   var requestData = {
     "requests":[
       {
