@@ -89,7 +89,7 @@ form.onsubmit = function(event) {
                     console.log("GOT HTML DATA");
                     data = jQuery.parseHTML(data);
                     console.log(data);
-                    $("#replace").replaceWith(data);
+                    // $("#replace").replaceWith(data);
                 },
             });
 

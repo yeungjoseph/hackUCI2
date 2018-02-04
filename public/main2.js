@@ -21,18 +21,17 @@ function upload() {
             url: '/',
             data: JSON.stringify({img: temp}),
             type: "POST",
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
-            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
             success: function(response) {
-                window.location.href = response.redirect;
+                console.log(response);
+
             }
         })
 
         console.log("request sent");
     });
     fileReader.readAsDataURL(file);
-
 
 }
 
