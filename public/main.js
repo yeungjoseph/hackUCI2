@@ -23,7 +23,18 @@ form.onsubmit = function(event) {
     var fileReader = new FileReader();
     fileReader.addEventListener("load", function() {
         console.log(fileReader.result);
-        xhr.send(JSON.stringify({img: fileReader.result}));
+
+        var n = 0;
+        n = fileReader.result.search("base64,") + 7;
+        // console.log(fileReader.result.substring(0, n));
+
+        // hold the temporary string
+        temp = fileReader.result.substring(n, fileReader.result.length);
+
+        console.log(temp);
+
+
+        xhr.send(JSON.stringify({img: temp}));
     });
     fileReader.readAsDataURL(file);
 
