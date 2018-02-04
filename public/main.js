@@ -13,8 +13,8 @@ form.onsubmit = function(event) {
     var files = fileSelect.files;
 
     var file = files[0];
-    console.log("name: " + file.name);
-    console.log("size: " + file.size);
+    //console.log("name: " + file.name);
+    //console.log("size: " + file.size);
 
     var formData = new FormData();
     //rest of the code
@@ -22,7 +22,7 @@ form.onsubmit = function(event) {
 
     var fileReader = new FileReader();
     fileReader.addEventListener("load", function() {
-        console.log(fileReader.result);
+        //console.log(fileReader.result);
 
         var n = 0;
         n = fileReader.result.search("base64,") + 7;
@@ -31,7 +31,7 @@ form.onsubmit = function(event) {
         // hold the temporary string
         temp = fileReader.result.substring(n, fileReader.result.length);
 
-        console.log(temp);
+        //console.log(temp);
 
 
         xhr.send(JSON.stringify({img: temp}));
