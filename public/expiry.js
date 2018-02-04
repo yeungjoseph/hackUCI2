@@ -19,7 +19,7 @@ exports.expiry = {
     "celery":"21",
     "beans":"6",
     "lettuce":"6",
-    "banana":"5"
+    "banana":"5",
     "apricot":"8",
     "avocado" : "8",
     "blueberry":"7",
@@ -32,7 +32,7 @@ exports.expiry = {
     "orange":"40",
     "pear":"9",
     "peach":"4",
-    "passionfruit":,"20",
+    "passionfruit":"20",
     "pineapple":"4",
     "pomegranate":"21",
     "strawberry":"6",
