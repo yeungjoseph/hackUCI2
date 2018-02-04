@@ -2,9 +2,14 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var request = require('request');
+var message = require('../public/message.js');
 
 
 /* GET home page. */
+router.get('/test', function(req, res) {
+  res.render('test');
+})
+
 router.get('/', function(req, res, next) {
   res.render('index');
 });
@@ -33,6 +38,7 @@ router.post('/', function(req, res, next) {
       if (err)
         return console.error(err)
       console.log('Upload successful!  Server responded with:', body.responses[0]);
+      message.check_expiry(body);
       });
   }
 });
