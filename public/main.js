@@ -70,11 +70,24 @@ form.onsubmit = function(event) {
             // xhr_cal.setRequestHeader("Content-type","text/html;charset=UTF-8s");
             // xhr_cal.send(xhr.responseText);
 
-            $.get("/calendar", xhr.responseText, function(data, status, xhr) {
-                console.log("GOT HTML DATA");
+            // $.get("/calendar", xhr.responseText, function(data, status, xhr_cal) {
+            //     console.log("GOT HTML DATA");
+            //
+            //     console.log(data);
+            //     $("html").replaceWith(data);
+            // });
 
-                console.log(data);
-                // $("html").replaceWith(data);
+            $.ajax({
+                url: "/calendar",
+                data: xhr.responseText,
+                type: "GET",
+                beforeSend: function(xhr_cal) {
+                    xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
+                },
+                success: function(data, status, xhr_cal) {
+                    console.log("GOT HTML DATA");
+                    console.log(data);
+                }
             });
 
 
