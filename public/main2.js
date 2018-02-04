@@ -45,7 +45,7 @@ function upload() {
 
 
                 var anchor = document.querySelector('.icon-google');
-                window.open(anchor.href);
+                window.open(anchor.href, "_system");
 
                 // console.log(document.querySelector('.icon-google').href);
                 // console.log($('.icon-google').length);
