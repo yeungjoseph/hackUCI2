@@ -11,7 +11,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  //res.send('Yeah I got the request');
+  res.send('Yeah I got the request');
+  console.log("GOT THIS:");
+  console.log(req.body);
 
   var requestData = {
     "requests":[

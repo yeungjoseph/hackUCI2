@@ -21,9 +21,8 @@ form.onsubmit = function(event) {
 
 
 
-    formData.append('photo', file, file.name);
-    // formData.append('testfield', 'wow');
-
+    formData.append("photo", file, file.name);
+    // formData.append("testfield", "wow");
 
     // start request
     var xhr = new XMLHttpRequest();
@@ -34,6 +33,7 @@ form.onsubmit = function(event) {
     xhr.onload = function() {
         if (xhr.status === 200) {
             // uploadButton.innerHTML = 'Upload';
+            console.log(formData);
             console.log("connection open");
         } else {
             alert('An error occurred!');
