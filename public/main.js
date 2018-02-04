@@ -1,14 +1,14 @@
 var form = document.getElementById('file-form');
 var fileSelect = document.getElementById('file-select');
 
-// var uploadButton = document.getElementById('upload-button');
+
 
 
 form.onsubmit = function(event) {
     // override default behavior
     event.preventDefault();
 
-    // uploadButton.innerHTML = "Uploading...";
+ 
 
     var files = fileSelect.files;
 
@@ -16,21 +16,15 @@ form.onsubmit = function(event) {
     console.log("name: " + file.name);
     console.log("size: " + file.size);
 
-    var formData = new FormData();
-    //rest of the code
 
 
     var fileReader = new FileReader();
     fileReader.addEventListener("load", function() {
-        console.log(fileReader.result);
         xhr.send(JSON.stringify({img: fileReader.result}));
     });
     fileReader.readAsDataURL(file);
 
 
-
-    // formData.append("photo", file, file.name);
-    // formData.append("testfield", "wow");
 
     // start request
     var xhr = new XMLHttpRequest();
@@ -40,8 +34,6 @@ form.onsubmit = function(event) {
 
     xhr.onload = function() {
         if (xhr.status === 200) {
-            // uploadButton.innerHTML = 'Upload';
-            // console.log(formData);
             console.log("connection open");
         } else {
             alert('An error occurred!');
