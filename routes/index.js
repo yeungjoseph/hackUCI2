@@ -35,11 +35,7 @@ router.post('/', function(req, res, next) {
         return console.error(err)
       console.log('Upload successful!  Server responded with:', body.responses[0]);
       var response = message.check_expiry(body);
-      res.response = response;
-      req.response = response;
-      res.locals.response = response;
-      return res.redirect(302, '/calendar');
-      // res.send(response);
+      res.send(response);
       });
   }
 });
