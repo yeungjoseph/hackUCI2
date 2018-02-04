@@ -28,18 +28,34 @@ function upload() {
                 console.log(response);
 
 
-
-                var myCalendar = createCalendar({
-                    options: {
-                        class: '',
-
-                    },
-                    data: {
-                        title:  response.name + " expiring soon!",
-                        start: new Date(response.date),
-                        duration: 60,
-                    }
-                });
+                if (response.name != 'temp')
+                {
+                    var myCalendar = createCalendar({
+                        options: {
+                            class: '',
+    
+                        },
+                        data: {
+                            title:  response.name + " expiring soon!",
+                            start: new Date(response.date),
+                            duration: 60,
+                        }
+                    });
+                }
+                else {
+                    var myCalendar = createCalendar({
+                        options: {
+                            class: '',
+    
+                        },
+                        data: {
+                            title:  "Item could not be identified",
+                            start: new Date(Date.now()),
+                            duration: 60,
+                        }
+                    });
+                }
+                
 
                 document.querySelector('.new-cal').appendChild(myCalendar);
 
