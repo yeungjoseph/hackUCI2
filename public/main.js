@@ -16,7 +16,7 @@ form.onsubmit = function(event) {
     //console.log("name: " + file.name);
     //console.log("size: " + file.size);
 
-    var formData = new FormData();
+    // var formData = new FormData();
     //rest of the code
 
 
