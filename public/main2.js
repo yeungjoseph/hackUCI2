@@ -23,6 +23,7 @@ function upload() {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(response) {
+                alert("Upload Successful!");
                 console.log(typeof response);
                 console.log(response);
 
