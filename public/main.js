@@ -64,14 +64,29 @@ form.onsubmit = function(event) {
                 console.log(xhr.responseText);
             }
 
+<<<<<<< HEAD
             //window.location.replace("/calendar");
+=======
+            // var xhr_cal = new XMLHttpRequest();
+>>>>>>> a0f9e8b39b4643dc1f8cb4edcf503527050b1f67
+
+            // xhr_cal.open('GET', '/calendar', 'true');
+            // xhr_cal.setRequestHeader("Content-type","text/html;charset=UTF-8s");
+            // xhr_cal.send(xhr.responseText);
+
+            $.get("/calendar", xhr.responseText, function(data, status, xhr) {
+                console.log("GOT HTML DATA");
+
+                console.log(data);
+                // $("html").replaceWith(data);
+            });
 
 
-
-
+        } else if (xhr.status === 304) {
 
         } else {
-            alert('An error occurred!\n status: ' + xhr.status);
+
+            // alert('An error occurred!\n status: ' + xhr.status);
             console.log("status: " + xhr.status);
         }
     }
