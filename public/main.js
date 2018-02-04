@@ -60,8 +60,15 @@ form.onsubmit = function(event) {
             // uploadButton.innerHTML = 'Upload';
             // console.log(formData);
             // console.log("connection open");
-
             console.log("status 200: " + xhr.status);
+
+
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                console.log(typeof(xhr.responseText));
+                console.log(xhr.responseText);
+            }
+
+
         } else {
             // alert('An error occurred!\n status: ' + xhr.status);
             console.log("status: " + xhr.status);
