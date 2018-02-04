@@ -30,6 +30,7 @@ router.post('/', function(req, res, next) {
       }
     ]
   }
+  console.log(requestData);
   if (requestData) {
     request.post({
       url: "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyDs5HW2OUYCStIk67GkQ5efoT4zznsPmPw",
@@ -38,7 +39,8 @@ router.post('/', function(req, res, next) {
       if (err)
         return console.error(err)
       console.log('Upload successful!  Server responded with:', body.responses[0]);
-      message.check_expiry(body);
+      var date = message.check_expiry(body);
+      res.send(date);
       });
   }
 });

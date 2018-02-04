@@ -120,13 +120,13 @@ exports.check_expiry = function(response)
   }
 
   console.log("Match = " + answer +  " With Score = " + score + " Days: " + expiry_dates[answer]); //Add number of days later
- /* var my_date = new Date();  //This stores the current Date
+  var my_date = new Date();  //This stores the current Date
   var curr_date = new Date();
-  //my_date.setDate (my_date.getDate() + expiry_dates[0][answer]);
-  my_date.setDate (my_date.getDate() + parseInt(expiry_dates[0][answer]));
-  console.log("Date: " + curr_date.toString())
-  console.log(String(expiry_dates[0][answer]))
+  //my_date.setDate (my_date.getDate() + expiry_dates[answer]);
+  my_date.setDate (my_date.getDate() + parseInt(expiry_dates[answer]));
+  console.log("Date: " + curr_date.toString());
+  console.log(String(expiry_dates[answer]));
   //alert("Date: " + String(document.write(my_date)))
-  console.log("New Date: " + String(my_date));*/
-
+  console.log("New Date: " + String(my_date));
+  return my_date;
 }
