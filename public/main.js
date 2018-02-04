@@ -63,14 +63,25 @@ form.onsubmit = function(event) {
             console.log("status 200: " + xhr.status);
 
 
+
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 console.log(typeof(xhr.responseText));
                 console.log(xhr.responseText);
             }
 
+            xhr_cal = new XMLHttpRequest();
+            xhr.open('GET', '/calendar', 'true');
+            xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
+            xhr_cal.send(xhr.responseText);
+
+
+
+
+
+
 
         } else {
-            // alert('An error occurred!\n status: ' + xhr.status);
+            alert('An error occurred!\n status: ' + xhr.status);
             console.log("status: " + xhr.status);
         }
     }
