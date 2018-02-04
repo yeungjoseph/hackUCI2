@@ -69,7 +69,7 @@ form.onsubmit = function(event) {
                 console.log(xhr.responseText);
             }
 
-            xhr_cal = new XMLHttpRequest();
+            var xhr_cal = new XMLHttpRequest();
             xhr.open('GET', '/calendar', 'true');
             xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
             xhr_cal.send(xhr.responseText);
