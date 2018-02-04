@@ -11,9 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  res.send('Yeah I got the request');
-  console.log("GOT EM");
-  console.log(req.body);
+  //res.send('Yeah I got the request');
 
   var requestData = {
     "requests":[
@@ -21,13 +19,12 @@ router.post('/', function(req, res, next) {
         "image":{
           "source":{
             "imageUri":
-              "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+            "https://parentinghealthybabies.com/wp-content/uploads/2012/12/apple-16.jpg"
           }
         },
         "features":[
           {
-            "type":"LOGO_DETECTION",
-            "maxResults":1
+            "type": "LABEL_DETECTION"
           }
         ]
       }
