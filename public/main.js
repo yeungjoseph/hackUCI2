@@ -49,11 +49,6 @@ form.onsubmit = function(event) {
     xhr.open('POST', '/', 'true');
     xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
 
-    // xhr.onreadystatechange = function() {
-    //     if (xhr.status === 302 && xhr.readyState === XMLHttpRequest.DONE) {
-    //         console.log(xhr.reponseText);
-    //     }
-    // }
 
     xhr.onload = function() {
         if (xhr.status === 200) {
@@ -70,11 +65,9 @@ form.onsubmit = function(event) {
             }
 
             var xhr_cal = new XMLHttpRequest();
-            xhr.open('GET', '/calendar', 'true');
-            xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
+            xhr_cal.open('GET', '/calendar', 'true');
+            xhr_cal.setRequestHeader("Content-type","application/json;charset=UTF-8s");
             xhr_cal.send(xhr.responseText);
-
-
 
 
 
