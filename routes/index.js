@@ -35,7 +35,7 @@ router.post('/', function(req, res, next) {
         return console.error(err)
       console.log('Upload successful!  Server responded with:', body.responses[0]);
       var response = message.check_expiry(body);
-      res.send(response);
+      res.status(302).send(response);
       });
   }
 });
