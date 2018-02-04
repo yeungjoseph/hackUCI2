@@ -35,13 +35,17 @@ router.post('/', function(req, res, next) {
         return console.error(err)
       console.log('Upload successful!  Server responded with:', body.responses[0]);
       var response = message.check_expiry(body);
+      res.response = response;
+      //return res.redirect(303, '/calendar');
       res.send(response);
       });
   }
 });
 
 router.get('/calendar', function(req, res) {
-    res.render('calendar');
-})
+  console.log("get request to calendar");
+  console.log(req.query);
+    return res.render('calendar');
+});
 
 module.exports = router;
