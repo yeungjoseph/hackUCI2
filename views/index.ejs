@@ -97,6 +97,44 @@
             html {
                 background: linear-gradient(to bottom right, #8EF378, #1CBBB4);
             }
+
+
+            .floating-button {
+                position: fixed;
+                right: 30px;
+                bottom: 30px;
+                line-height: 40px;
+                vertical-align: middle;
+                text-align: center;
+                color: white;
+                background-color: #FE69BD;
+                height: 40px;
+                width: 40px;
+                border-radius: 99999px;
+                padding: 10px;
+                z-index: 110;
+            }
+
+            .floating-modal {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                background-color: white;
+                display: inline-block;
+                padding: 50px;
+                line-height: 1.5;
+                border-radius: 10px;
+                z-index: 120;
+                opacity: 0;
+                transition: all 1s linear;
+            }
+
+            .floating-button:hover ~ .floating-modal {
+                opacity: 1;
+            }
+
         </style>
     </head>
 
@@ -118,8 +156,25 @@
             </div>
 
 
-            <div class="hide">
+            <span class="floating-button">Help</span>
 
+            <div class="floating-modal">
+                <span class="bold">Tend Your Greens: Instructions</span>
+                <ul>
+                    <li>Take a photo of your vegetable/fruit</li>
+                    <li>A calendar event with the correct expiration date will be generated</li>
+                    <li>Save the event and get an event reminder when your food expires</li>
+                    <li>In case we don't identify it, you can set your own date</li>
+                </ul>
+
+                <span class="bold">Note:</span>
+                <ul>
+                    <li>Please allow pop-ups to allow redirection to your calendar app</li>
+                </ul>
+            </div>
+
+
+            <div class="hide">
                 <form class="wrapper" id="form">
                     <input type="file" id="file-select" name="photo" accept="image/x-png,image/gif,image/jpeg"/>
                 </form>
