@@ -23,6 +23,9 @@ function upload() {
             type: "POST",
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
+            },
+            success: function(response) {
+                window.location.href = response.redirect;
             }
         })
 
