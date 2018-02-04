@@ -49,6 +49,12 @@ form.onsubmit = function(event) {
     xhr.open('POST', '/', 'true');
     xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
 
+    xhr.onreadystatechange = function() {
+        if (xhr.status === 302 && xhr.readyState === XMLHttpRequest.DONE) {
+            console.log(xhr.reponseText);
+        }
+    }
+
     xhr.onload = function() {
         if (xhr.status === 200) {
             // uploadButton.innerHTML = 'Upload';
