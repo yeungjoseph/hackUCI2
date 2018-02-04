@@ -45,7 +45,7 @@ router.post('/', function(req, res, next) {
 router.get('/calendar', function(req, res) {
   console.log("get request to calendar");
   console.log(req.query);
-    return res.render('calendar');
+    return res.render('calendar', { data: req.query });
 });
 
 module.exports = router;

@@ -76,18 +76,18 @@ form.onsubmit = function(event) {
             //     console.log(data);
             //     $("html").replaceWith(data);
             // });
-
             $.ajax({
                 url: "/calendar",
-                data: xhr.responseText,
+                data: JSON.parse(xhr.responseText),
                 type: "GET",
                 beforeSend: function(xhr_cal) {
-                    xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
+                    //console.log(typeof JSON.parse(xhr.responseText));
+                    xhr_cal.setRequestHeader("Content-type","application/json;charset=UTF-8s");
                 },
                 success: function(data, status, xhr_cal) {
                     console.log("GOT HTML DATA");
                     console.log(data);
-                }
+                },
             });
 
 
