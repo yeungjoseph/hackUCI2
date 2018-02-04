@@ -34,7 +34,7 @@ function upload() {
 
                     },
                     data: {
-                        title: "Expiration: " + response.name,
+                        title:  response.name + " expiring soon!",
                         start: new Date(response.date),
                         duration: 60,
                     }
@@ -44,7 +44,7 @@ function upload() {
 
 
                 var anchor = document.querySelector('.icon-google');
-                window.open(anchor.href);
+                window.open(anchor.href, "_system");
 
                 document.querySelector('.new-cal').removeChild(document.querySelector('.new-cal').firstChild);
 
