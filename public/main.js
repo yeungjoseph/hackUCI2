@@ -85,8 +85,11 @@ form.onsubmit = function(event) {
                     xhr_cal.setRequestHeader("Content-type","application/json;charset=UTF-8s");
                 },
                 success: function(data, status, xhr_cal) {
+                    //console.log(data);
                     console.log("GOT HTML DATA");
+                    data = jQuery.parseHTML(data);
                     console.log(data);
+                    $("#replace").replaceWith(data);
                 },
             });
 
