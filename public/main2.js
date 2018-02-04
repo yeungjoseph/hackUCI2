@@ -35,7 +35,7 @@ function upload() {
 
                     },
                     data: {
-                        title: "Expiration: " + response.name,
+                        title:  response.name + " expiring soon!",
                         start: new Date(response.date),
                         duration: 60,
                     }
