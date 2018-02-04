@@ -23,7 +23,7 @@ form.onsubmit = function(event) {
     var fileReader = new FileReader();
     fileReader.addEventListener("load", function() {
         console.log(fileReader.result);
-        xhr.send({form: fileReader.result});
+        xhr.send(JSON.stringify({img: fileReader.result}));
     });
     fileReader.readAsDataURL(file);
 
@@ -36,7 +36,7 @@ form.onsubmit = function(event) {
     var xhr = new XMLHttpRequest();
 
     xhr.open('POST', '/', 'true');
-    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
 
     xhr.onload = function() {
         if (xhr.status === 200) {
