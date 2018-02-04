@@ -3,22 +3,132 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tend Your Greens - Official</title>
+
 
         <script src="/ouical.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+
+        <style>
+            @import url(normalize.css);
+
+            @font-face {
+                font-family: Roboto;
+                src: url(Roboto-Regular.ttf) format("truetype");
+                font-weight: normal;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                src: url(Roboto-Bold.ttf) format("truetype");
+                font-weight: bold;
+            }
+
+            body {
+                font-family: Roboto;
+
+                height: 100vh;
+            }
+            header {
+                background-color: #ffffff;
+                position: relative;
+                z-index: 100;
+                box-shadow: 0px 0px 3px #808080;
+            }
+
+
+            nav {
+                font-weight: bold;
+
+                height: 3.5rem;
+                line-height: 3.5rem;
+                vertical-align: middle;
+                font-size: 1.3rem;
+                color: #212121;
+            }
+
+            nav span {
+                padding-left: 30px;
+            }
+
+            main {
+                position: fixed;
+                width: 100vw;
+                top: 3.5rem;
+                left: 0px;
+                height: calc(100vh - 3.5rem);
+            }
+
+            .img-container {
+                /* background-color: #1A9AD9; */
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* background-color: #D851E6; */
+
+            }
+
+            .img-camera {
+                display: block;
+                position: absolute;
+                cursor: pointer;
+
+                width: 50vmin;
+
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                border: 10px solid #545454;
+                border-radius: 30px;
+                padding: 30px;
+            }
+
+
+            .hide {
+                display: none;
+            }
+
+
+        </style>
     </head>
 
 
     <body>
-        <input type="file" id="file-select" name="photo"/>
-        <br />
-        <button id="upload-button">Upload</button>
-        <div class="new-cal">
+        <header>
+            <nav>
+                <span>Tend Your Greens</span>
+            </nav>
+        </header>
 
-        </div>
+        <main>
+            <div class="img-container">
+                <img class="img-camera" id="img-camera" width="200" src="camera.svg" alt="Unable to Load Icon"/>
+            </div>
 
-        <script src="main2.js"></script>
+            <div class="progress-layer">
+                <div class="progress-bar"></div>
+            </div>
+
+
+            <div class="hide">
+
+                <form class="wrapper" id="form">
+                    <input type="file" id="file-select" name="photo" accept="image/x-png,image/gif,image/jpeg"/>
+                </form>
+
+
+                <br />
+                <button id="upload-button">Upload</button>
+                <div class="new-cal"></div>
+            </div>
+        </main>
+
+        <script src="/main2.js"></script>
     </body>
 </html>

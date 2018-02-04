@@ -1,7 +1,6 @@
 var fileSelect = document.getElementById('file-select');
 var button = document.getElementById('upload-button');
 
-
 function upload() {
     file = fileSelect.files[0];
 
@@ -24,6 +23,7 @@ function upload() {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(response) {
+                alert("Upload Successful!");
                 console.log(typeof response);
                 console.log(response);
 
@@ -63,6 +63,11 @@ function upload() {
                 var anchor = document.querySelector('.icon-google');
                 window.open(anchor.href, "_system");
 
+                document.querySelector('.new-cal').removeChild(document.querySelector('.new-cal').firstChild);
+
+                // dump file
+                $('#form').trigger("reset");
+
                 // console.log(document.querySelector('.icon-google').href);
                 // console.log($('.icon-google').length);
                 // $('.icon-google').attr('id', 'test');
@@ -73,8 +78,14 @@ function upload() {
         console.log("request sent");
     });
     fileReader.readAsDataURL(file);
-
 }
 
-
 button.onclick = upload;
+
+$('#file-select').change(function(){
+    $('#upload-button').click();
+});
+
+$('#img-camera').click(function() {
+    $('#file-select').click();
+});
