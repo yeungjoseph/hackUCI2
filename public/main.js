@@ -65,16 +65,21 @@ form.onsubmit = function(event) {
             }
 
             var xhr_cal = new XMLHttpRequest();
-            xhr_cal.open('GET', '/calendar', 'true');
-            xhr_cal.setRequestHeader("Content-type","text/html;charset=UTF-8s");
-            xhr_cal.send(xhr.responseText);
+
+            // xhr_cal.open('GET', '/calendar', 'true');
+            // xhr_cal.setRequestHeader("Content-type","text/html;charset=UTF-8s");
+            // xhr_cal.send(xhr.responseText);
+
+            $.get("/calendar", xhr.responseText, function(data, status, xhr) {
+                $("html").replaceWith(data);
+            });
 
 
-
-
+        } else if (xhr.status === 304) {
 
         } else {
-            alert('An error occurred!\n status: ' + xhr.status);
+
+            // alert('An error occurred!\n status: ' + xhr.status);
             console.log("status: " + xhr.status);
         }
     }
