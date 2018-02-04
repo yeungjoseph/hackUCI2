@@ -32,5 +32,10 @@ exports.check_expiry = function(response)
   my_date.setDate (my_date.getDate() + parseInt(expiry_dates[answer]));
   console.log("Current Date: " + curr_date.toString());
   console.log("New Date: " + my_date.toString());
-  return my_date;
+  var ret = {
+    "date": my_date,
+    "name": answer,
+    "days": expiry_dates[answer],
+  };
+  return ret;
 }

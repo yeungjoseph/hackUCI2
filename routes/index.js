@@ -34,10 +34,14 @@ router.post('/', function(req, res, next) {
       if (err)
         return console.error(err)
       console.log('Upload successful!  Server responded with:', body.responses[0]);
-      var date = message.check_expiry(body);
-      res.send(date);
+      var response = message.check_expiry(body);
+      res.send(response);
       });
   }
 });
+
+router.get('/calendar', function(req, res) {
+    res.render('calendar');
+})
 
 module.exports = router;
