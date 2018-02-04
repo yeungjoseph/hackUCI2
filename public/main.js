@@ -71,10 +71,9 @@ form.onsubmit = function(event) {
             // xhr_cal.send(xhr.responseText);
 
             $.get("/calendar", xhr.responseText, function(data, status, xhr) {
-                location.reload(true)
-                // console.log("GOT HTML DATA");
+                console.log("GOT HTML DATA");
 
-                // console.log(data);
+                console.log(data);
                 // $("html").replaceWith(data);
             });
 
