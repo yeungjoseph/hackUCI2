@@ -113,6 +113,7 @@
                 border-radius: 99999px;
                 padding: 10px;
                 z-index: 110;
+                transition: all 1s linear;
             }
 
             .floating-modal {
@@ -120,21 +121,32 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-
                 background-color: white;
                 display: inline-block;
                 padding: 50px;
                 line-height: 1.5;
                 border-radius: 10px;
-                z-index: 120;
+                z-index: -120;
                 opacity: 0;
                 transition: all 1s linear;
+                /* font-size: 13px; */
+                box-sizing: border-box;
             }
 
             .floating-button:hover ~ .floating-modal {
                 opacity: 1;
+                z-index: 90;
             }
 
+            .floating-button:hover {
+                transform: rotate(720deg);
+            }
+
+            @media only screen and (max-width: 480px) {
+                .floating-modal {
+                    width: 100%;
+                }
+            }
         </style>
     </head>
 
@@ -156,7 +168,7 @@
             </div>
 
 
-            <span class="floating-button">Help</span>
+            <span class="floating-button">?</span>
 
             <div class="floating-modal">
                 <span class="bold">Tend Your Greens: Instructions</span>
@@ -170,6 +182,7 @@
                 <span class="bold">Note:</span>
                 <ul>
                     <li>Please allow pop-ups to allow redirection to your calendar app</li>
+                    <li>Expiry date is given assumed refridgerated storage</li>
                 </ul>
             </div>
 
