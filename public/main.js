@@ -49,19 +49,22 @@ form.onsubmit = function(event) {
     xhr.open('POST', '/', 'true');
     xhr.setRequestHeader("Content-type","application/json;charset=UTF-8s");
 
-    xhr.onreadystatechange = function() {
-        if (xhr.status === 302 && xhr.readyState === XMLHttpRequest.DONE) {
-            console.log(xhr.reponseText);
-        }
-    }
+    // xhr.onreadystatechange = function() {
+    //     if (xhr.status === 302 && xhr.readyState === XMLHttpRequest.DONE) {
+    //         console.log(xhr.reponseText);
+    //     }
+    // }
 
     xhr.onload = function() {
         if (xhr.status === 200) {
             // uploadButton.innerHTML = 'Upload';
             // console.log(formData);
-            console.log("connection open");
+            // console.log("connection open");
+
+            console.log("status 200: " + xhr.status);
         } else {
-            alert('An error occurred!');
+            // alert('An error occurred!\n status: ' + xhr.status);
+            console.log("status: " + xhr.status);
         }
     }
 }
