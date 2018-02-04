@@ -20,8 +20,16 @@ form.onsubmit = function(event) {
     //rest of the code
 
 
+    var fileReader = new FileReader();
+    fileReader.addEventListener("load", function() {
+        console.log(fileReader.result);
+        xhr.send({image: fileReader.result});
+    });
+    fileReader.readAsDataURL(file);
 
-    formData.append("photo", file, file.name);
+
+
+    // formData.append("photo", file, file.name);
     // formData.append("testfield", "wow");
 
     // start request
@@ -33,12 +41,10 @@ form.onsubmit = function(event) {
     xhr.onload = function() {
         if (xhr.status === 200) {
             // uploadButton.innerHTML = 'Upload';
-            console.log(formData);
+            // console.log(formData);
             console.log("connection open");
         } else {
             alert('An error occurred!');
         }
     }
-
-    xhr.send(formData);
 }
