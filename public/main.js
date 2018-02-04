@@ -23,7 +23,7 @@ form.onsubmit = function(event) {
     var fileReader = new FileReader();
     fileReader.addEventListener("load", function() {
         console.log(fileReader.result);
-        xhr.send({image: fileReader.result});
+        xhr.send({form: fileReader.result});
     });
     fileReader.readAsDataURL(file);
 
