@@ -64,11 +64,7 @@ form.onsubmit = function(event) {
                 console.log(xhr.responseText);
             }
 
-<<<<<<< HEAD
-            //window.location.replace("/calendar");
-=======
             // var xhr_cal = new XMLHttpRequest();
->>>>>>> a0f9e8b39b4643dc1f8cb4edcf503527050b1f67
 
             // xhr_cal.open('GET', '/calendar', 'true');
             // xhr_cal.setRequestHeader("Content-type","text/html;charset=UTF-8s");
