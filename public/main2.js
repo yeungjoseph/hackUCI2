@@ -15,6 +15,7 @@ function upload() {
         console.log("base64 retrieved");
 
         $('.progress-layer').css('display', 'block');
+        $('.progress-layer').css('opacity', '1');
 
         // AJAX REQUEST GOES HERE
         $.ajax({
@@ -29,16 +30,21 @@ function upload() {
                 // set the onprogress event handler
                 xhr.upload.onprogress = function(evt){
                     $('.progress-bar .loader').css('width', (evt.loaded/evt.total*100) + '%');
-                    console.log('progress', evt.loaded/evt.total*100);
+                    console.log('progress', evt.loaded/evt.total*100, '\n');
                 };
-                // set the onload event handler
-                xhr.upload.onload = function(){ console.log('DONE!') } ;
-                // return the customized object
                 return xhr ;
             },
 
             success: function(response) {
                 alert("Upload Successful!");
+                $('.progress-bar .loader').css('width','0%');
+
+                $('.progress-layer').css('opacity', '0');
+                setTimeout(function(){
+                    $('.progress-layer').css('display', 'none');
+                }, 1000);
+
+                console.log("upload successful");
                 console.log(typeof response);
                 console.log(response);
                 if (response.name != 'temp')
