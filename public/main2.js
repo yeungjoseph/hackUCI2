@@ -36,7 +36,7 @@ function upload() {
             },
 
             success: function(response) {
-                alert("Upload Successful!");
+                // alert("Upload Successful!");
                 $('.progress-bar .loader').css('width','0%');
 
                 $('.progress-layer').css('opacity', '0');
@@ -80,7 +80,34 @@ function upload() {
 
 
                 var anchor = document.querySelector('.icon-google');
-                window.open(anchor.href, "_system");
+                // conditional open for
+                var attempt = window.open(anchor.href, "_system");
+                if (!attempt || attempt.closed || typeof attempt.closed == 'undefined') {
+                    console.log("Popup blocked");
+                    window.location.href = anchor.href;
+                } else {
+                    console.log("Popup not blocked");
+                    window.open(anchor.href, "_system");
+                }
+
+
+                // DEVICE SPECIFIC
+                // if (/Safari/.test(navigator.userAgent) && /Mobile/.test(navigator.userAgent)) {
+                //     window.open(anchor.href, "_system");
+                // } else if (/Android/.test(navigator.userAgent)) {
+                //     var appWindow = window.open(anchor.href);
+                //     setTimeout(function(){}, 1000);
+                // } else {
+                //     //default
+                //     window.open(anchor.href, "_system");
+                // }
+
+
+
+
+
+
+
 
                 document.querySelector('.new-cal').removeChild(document.querySelector('.new-cal').firstChild);
 
@@ -107,4 +134,17 @@ $('#file-select').change(function(){
 
 $('#img-camera').click(function() {
     $('#file-select').click();
+});
+
+
+
+$('.floating-button').click(function() {
+    $('.floating-button').removeClass('pressed');
+    var help = $('.floating-modal');
+    help.toggleClass('appear');
+
+    $('.floating-button').addClass('pressed');
+    setTimeout(function(){
+        $('.floating-button').removeClass('pressed');
+    }, 500);
 });
