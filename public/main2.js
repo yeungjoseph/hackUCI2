@@ -36,7 +36,7 @@ function upload() {
             },
 
             success: function(response) {
-                // alert("Upload Successful!");
+                alert("Upload Successful!");
                 $('.progress-bar .loader').css('width','0%');
 
                 $('.progress-layer').css('opacity', '0');
@@ -82,13 +82,13 @@ function upload() {
                 var anchor = document.querySelector('.icon-google');
                 // conditional open for
                 var attempt = window.open(anchor.href, "_system");
-                if (!attempt || attempt.closed || typeof attempt.closed == 'undefined') {
-                    console.log("Popup blocked");
-                    window.location.href = anchor.href;
-                } else {
-                    console.log("Popup not blocked");
-                    window.open(anchor.href, "_system");
-                }
+                // if (!attempt || attempt.closed || typeof attempt.closed == 'undefined') {
+                //     console.log("Popup blocked");
+                //     window.location.href = anchor.href;
+                // } else {
+                //     console.log("Popup not blocked");
+                //     window.open(anchor.href, "_system");
+                // }
 
 
                 // DEVICE SPECIFIC
