@@ -81,14 +81,14 @@ function upload() {
 
                 var anchor = document.querySelector('.icon-google');
                 // conditional open for
-                var attempt = window.open(anchor.href, "_system");
-                // if (!attempt || attempt.closed || typeof attempt.closed == 'undefined') {
-                //     console.log("Popup blocked");
-                //     window.location.href = anchor.href;
-                // } else {
-                //     console.log("Popup not blocked");
-                //     window.open(anchor.href, "_system");
-                // }
+                // var attempt = window.open(anchor.href, "_system");
+                if (!attempt || attempt.closed || typeof attempt.closed == 'undefined') {
+                    console.log("Popup blocked");
+                    window.location.href = anchor.href;
+                } else {
+                    console.log("Popup not blocked");
+                    window.open(anchor.href, "_system");
+                }
 
 
                 // DEVICE SPECIFIC
@@ -101,13 +101,6 @@ function upload() {
                 //     //default
                 //     window.open(anchor.href, "_system");
                 // }
-
-
-
-
-
-
-
 
                 document.querySelector('.new-cal').removeChild(document.querySelector('.new-cal').firstChild);
 
@@ -128,16 +121,18 @@ function upload() {
 
 button.onclick = upload;
 
+// initiate on change
 $('#file-select').change(function(){
     $('#upload-button').click();
 });
 
+// initiate
 $('#img-camera').click(function() {
     $('#file-select').click();
 });
 
 
-
+// Help Button Animation
 $('.floating-button').click(function() {
     if ($('.floating-button').hasClass('pressed')){
         $('.floating-button').removeClass('pressed');
@@ -151,6 +146,4 @@ $('.floating-button').click(function() {
 
     var help = $('.floating-modal');
     help.toggleClass('appear');
-
-
 });
