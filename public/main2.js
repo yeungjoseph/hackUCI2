@@ -81,13 +81,11 @@ function upload() {
 
                 var anchor = document.querySelector('.icon-google');
                 // conditional open for
-                // var attempt = window.open(anchor.href, "_system");
+                var attempt = window.open(anchor.href, "_system");
                 if (!attempt || attempt.closed || typeof attempt.closed == 'undefined') {
                     console.log("Popup blocked");
+                    //open in current tab instead
                     window.location.href = anchor.href;
-                } else {
-                    console.log("Popup not blocked");
-                    window.open(anchor.href, "_system");
                 }
 
 
