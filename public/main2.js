@@ -139,12 +139,18 @@ $('#img-camera').click(function() {
 
 
 $('.floating-button').click(function() {
-    $('.floating-button').removeClass('pressed');
+    if ($('.floating-button').hasClass('pressed')){
+        $('.floating-button').removeClass('pressed');
+    } else {
+        $('.floating-button').addClass('pressed');
+        setTimeout(function(){
+            $('.floating-button').removeClass('pressed');
+        }, 250);
+    }
+
+
     var help = $('.floating-modal');
     help.toggleClass('appear');
 
-    $('.floating-button').addClass('pressed');
-    setTimeout(function(){
-        $('.floating-button').removeClass('pressed');
-    }, 500);
+
 });
