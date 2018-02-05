@@ -14,27 +14,40 @@ function upload() {
         temp = fileReader.result.substring(n, fileReader.result.length);
         console.log("base64 retrieved");
 
-        // AJAX REQUEST GOES HERE
+        $('.progress-layer').css('display', 'block');
 
+        // AJAX REQUEST GOES HERE
         $.ajax({
             url: '/',
             data: JSON.stringify({img: temp}),
             type: "POST",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
+            xhr: function(){
+                // get the native XmlHttpRequest object
+                var xhr = $.ajaxSettings.xhr() ;
+                // set the onprogress event handler
+                xhr.upload.onprogress = function(evt){
+                    $('.progress-bar .loader').css('width', (evt.loaded/evt.total*100) + '%');
+                    console.log('progress', evt.loaded/evt.total*100);
+                };
+                // set the onload event handler
+                xhr.upload.onload = function(){ console.log('DONE!') } ;
+                // return the customized object
+                return xhr ;
+            },
+
             success: function(response) {
                 alert("Upload Successful!");
                 console.log(typeof response);
                 console.log(response);
-
-
                 if (response.name != 'temp')
                 {
                     var myCalendar = createCalendar({
                         options: {
                             class: '',
-    
-                        },
+
+                    },
                         data: {
                             title:  response.name + " expiring soon!",
                             start: new Date(response.date),
@@ -46,7 +59,7 @@ function upload() {
                     var myCalendar = createCalendar({
                         options: {
                             class: '',
-    
+
                         },
                         data: {
                             title:  "Item could not be identified",
@@ -55,7 +68,7 @@ function upload() {
                         }
                     });
                 }
-                
+
 
                 document.querySelector('.new-cal').appendChild(myCalendar);
 
