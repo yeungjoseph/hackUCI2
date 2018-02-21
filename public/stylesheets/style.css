@@ -37,6 +37,7 @@ main {
     top: 3.5rem;
     left: 0px;
     height: calc(100vh - 3.5rem);
+    z-index: 100;
 }
 
 .img-container {
@@ -78,7 +79,7 @@ html {
 
 .floating-button {
     font-family: "Times New Roman";
-    position: absolute;
+    position: fixed;
     font-size: 30px;
     right: 30px;
     bottom: 20px;
@@ -87,6 +88,7 @@ html {
     text-align: center;
     color: white;
     background: linear-gradient(to bottom right, #FFDBD5, #FE69BD);
+    background-repeat: no-repeat;
     height: 40px;
     width: 40px;
     border-radius: 99999px;
@@ -178,6 +180,24 @@ html {
 .bold {
     font-weight: bold;
 }
+
+.github {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(45deg) translate(-50px, 80px);
+    background-color: black;
+    padding: 10px 100px 30px 100px;
+    text-align: center;
+}
+
+.github img {
+    vertical-align: middle;
+    transition: all 1s;
+    height: 5vmax;
+}
+
 
 @media only screen and (max-width: 950px) {
     .floating-modal {

@@ -26,7 +26,7 @@ exports.check_expiry = function(response)
   }
 
   console.log("Match = " + answer +  " With Score = " + score + " Days: " + expiry_dates[answer]); //Add number of days later
-  var my_date = new Date(); 
+  var my_date = new Date();
   var curr_date = new Date();
 
   my_date.setDate (my_date.getDate() + parseInt(expiry_dates[answer]));
