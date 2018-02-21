@@ -6,11 +6,22 @@
     font-weight: normal;
 }
 
+/* html {
+    overflow: hidden;
+} */
+
 body {
     font-family: Helvetica;
-
-    height: 100vh;
+    /* height: 100vh; */
+    /* overflow-y: scroll; */
+    -webkit-overflow-scrolling:touch;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
 header {
     background-color: #ffffff;
     position: relative;
@@ -32,6 +43,8 @@ nav {
 }
 
 main {
+    background: linear-gradient(to bottom right, #8EF378, #1CBBB4);
+    background-size:contain;
     position: fixed;
     width: 100vw;
     top: 3.5rem;
@@ -72,10 +85,6 @@ main {
     display: none;
 }
 
-html {
-    background: linear-gradient(to bottom right, #8EF378, #1CBBB4);
-}
-
 
 .floating-button {
     font-family: "Times New Roman";
@@ -88,7 +97,6 @@ html {
     text-align: center;
     color: white;
     background: linear-gradient(to bottom right, #FFDBD5, #FE69BD);
-    background-repeat: no-repeat;
     height: 40px;
     width: 40px;
     border-radius: 99999px;
@@ -183,19 +191,19 @@ html {
 
 .github {
     display: block;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
-    transform: rotate(45deg) translate(-50px, 80px);
+    transform: rotate(45deg) translate(-50px, 100px);
     background-color: black;
-    padding: 10px 100px 30px 100px;
+    padding: 10px 100px 50px 100px;
     text-align: center;
 }
 
 .github img {
     vertical-align: middle;
     transition: all 1s;
-    height: 5vmax;
+    height: 2.5vmax;
 }
 
 
@@ -203,5 +211,9 @@ html {
     .floating-modal {
         width: 90%;
         padding: 30px;
+    }
+
+    .github img {
+        height: 5vmax;
     }
 }

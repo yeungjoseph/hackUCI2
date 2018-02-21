@@ -145,3 +145,8 @@ $('.floating-button').click(function() {
     var help = $('.floating-modal');
     help.toggleClass('appear');
 });
+
+window.onresize = function(){
+    document.body.height = window.innerHeight;
+}
+window.onresize(); // called to initially set the height.
