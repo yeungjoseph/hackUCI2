@@ -1,7 +1,6 @@
 var expire = require("./expiry.js");
 var expiry = expire.expiry;
 
-
 exports.check_expiry = function(response)
 {
   var expiry_dates = expiry;
