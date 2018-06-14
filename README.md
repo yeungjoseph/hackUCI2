@@ -7,14 +7,14 @@ Google has changed their vision API, making it no longer compatible with our app
 ## How To Use
 First upload a photo from your phone or desktop.
 
-<p style="text-align: center">
+<p align="center">
 <img src="./screenshots/landing.png" width="650"/>
 </p>
 
 
 Then website will redirect you to a generated calendar event.
 
-<p style="text-align: center">
+<p align="center">
 <img src="./screenshots/calendar.png" width="650"/>
 </p>
 
