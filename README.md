@@ -5,12 +5,19 @@ A web app that adds reminders to your calendar to let you know when your groceri
 Google has changed their vision API, making it no longer compatible with our application.
 
 ## How To Use
-* upload a photo from your phone or desktop
-* website will redirect you to a generated calendar event
+First upload a photo from your phone or desktop.
 
-![landing page](./screenshots/landing.png)
+<div style="text-align: center">
+<img src="./screenshots/landing.png" style="width: 60%"/>
+</div>
 
-![calendar event](./screenshots/calendar.png)
+
+Then website will redirect you to a generated calendar event.
+
+<div style="text-align: center">
+<img src="./screenshots/calendar.png" style="width: 60%"/>
+</div>
+
 
 
 ## Local Installation
