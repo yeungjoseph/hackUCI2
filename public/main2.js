@@ -5,6 +5,8 @@ function upload() {
     file = fileSelect.files[0];
 
     console.log("got the file");
+    console.log(fileSelect.value);
+    console.log(file.name);
 
     var fileReader = new FileReader();
     fileReader.addEventListener("load", function() {

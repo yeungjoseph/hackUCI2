@@ -31,11 +31,10 @@ router.post('/', function(req, res, next) {
       url: "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyDs5HW2OUYCStIk67GkQ5efoT4zznsPmPw",
       json: requestData
     }, function(err, httpResponse, body) {
-      if (err)
-        return console.error(err)
-      console.log('Upload successful!  Server responded with:', body.responses[0]);
-      var response = message.check_expiry(body);
-      res.send(response);
+          if (err) return console.error(err);
+          console.log('Upload successful!  Server responded with:', body.responses[0]);
+          var response = message.check_expiry(body);
+          res.send(response);
       });
   }
 });
