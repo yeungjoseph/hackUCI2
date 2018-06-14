@@ -1,5 +1,6 @@
 # Tend Your Greens (Deprecated)
 A web app that adds reminders to your calendar to let you know when your groceries expire!
+This application takes a photo of your groceries and then generates an expiration reminder.
 
 # Note
 Google has changed their vision API, making it no longer compatible with our application.
